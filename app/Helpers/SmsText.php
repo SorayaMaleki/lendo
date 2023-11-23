@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class SmsText implements SmsTextInterface
 {
     /**
-     * @param Customer $customer
+     * @param  $customer
      * @return string
      */
-    public static function generateText(Customer $customer)
+    public static function generateText(array $customer)
     {
-        return "Dear {$customer->name},Your order has been registered successfully.Thank you.";
+        return "Dear {$customer['name']},Your order has been registered successfully.Thank you.";
     }
 }

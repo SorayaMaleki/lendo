@@ -43,9 +43,9 @@ class SmsNotification extends Notification
     public function toSms($notifiable)
     {
         $param['receiver_id'] = $this->customer->mobile;
-        $param['message'] = SmsText::generateText($this->customer);
+        $param['message'] = SmsText::generateText($this->customer->toArray());
         $param['type'] = "simple";
         $param['provider'] = "parsasms";// Change this to 'kavehnegar' for a different strategy
-        return $param;
+        dd($param) ;return $param;
     }
 }
