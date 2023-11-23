@@ -5,11 +5,8 @@ namespace App\Notifications;
 use App\Broadcasting\SmsChannel;
 use App\Helpers\SmsText;
 use App\Models\Customer;
-use App\Services\sms\SmsFactory;
 use Exception;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 class SmsNotification extends Notification
