@@ -46,6 +46,6 @@ class SmsNotification extends Notification
         $param['message'] = SmsText::generateText($this->customer->toArray());
         $param['type'] = "simple";
         $param['provider'] = "parsasms";// Change this to 'kavehnegar' for a different strategy
-        dd($param) ;return $param;
+        return $param;
     }
 }

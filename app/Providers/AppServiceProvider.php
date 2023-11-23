@@ -10,6 +10,11 @@ use App\Repositories\OrderRepository;
 use App\Repositories\OrderRepositoryInterface;
 use App\Services\OrderInterface;
 use App\Services\OrderService;
+use App\Services\sms\SmsFactory;
+use App\Services\sms\SmsInterface;
+use App\Services\sms\smsStrategy\AdapterInterface;
+use App\Services\sms\smsStrategy\kavehnegar\KavehnegarAdapter;
+use App\Services\sms\smsStrategy\parsasms\ParsasmsAdapter;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,6 +32,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(CustomerRepositoryInterface::class,CustomerRepository::class);
         $this->app->bind(OrderRepositoryInterface::class,OrderRepository::class);
         $this->app->bind(BaseRepositoryInterface::class,BaseRepository::class);
+        $this->app->bind(SmsInterface::class,SmsFactory::class);
+        $this->app->bind(AdapterInterface::class,ParsasmsAdapter::class);
+        $this->app->bind(AdapterInterface::class,KavehnegarAdapter::class);
     }
 
     /**

@@ -13,7 +13,6 @@ class ParsasmsAdapter implements AdapterInterface
     /** send single message
      * @param $params
      * @return JsonResponse
-     * @throws GuzzleException
      */
     public function sendSimple($params): JsonResponse
     {
